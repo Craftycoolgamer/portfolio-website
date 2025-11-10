@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState, useMemo } from 'react'
 import { useScrollAnimation } from './hooks/useScrollAnimation'
 import Navbar from './components/Navbar'
+import ThemeToggle from './components/ThemeToggle'
 import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
@@ -64,6 +65,7 @@ function App() {
   return (
     <div className="app">
       <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
+      <ThemeToggle />
       <div ref={sections.home}>
         <Hero scrollToSection={scrollToSection} />
       </div>
