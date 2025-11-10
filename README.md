@@ -61,6 +61,16 @@ To preview the production build:
 npm run preview
 ```
 
+### Pushing to Github Pages
+
+To push to github pages:
+
+```bash
+npm run deploy
+```
+
+This will build and push to the `dist` directory to gh-pages branch
+
 ## Customization
 
 ### Updating Content
