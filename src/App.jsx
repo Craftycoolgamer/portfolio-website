@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import './App.css'
 
@@ -15,6 +16,7 @@ function App() {
   const aboutRef = useRef(null)
   const experienceRef = useRef(null)
   const projectsRef = useRef(null)
+  const certificationsRef = useRef(null)
   const contactRef = useRef(null)
 
   const sections = useMemo(
@@ -23,6 +25,7 @@ function App() {
       about: aboutRef,
       experience: experienceRef,
       projects: projectsRef,
+      certifications: certificationsRef,
       contact: contactRef,
     }),
     []
@@ -32,6 +35,7 @@ function App() {
   const [aboutRefAnim, isAboutVisible] = useScrollAnimation()
   const [experienceRefAnim, isExperienceVisible] = useScrollAnimation()
   const [projectsRefAnim, isProjectsVisible] = useScrollAnimation()
+  const [certificationsRefAnim, isCertificationsVisible] = useScrollAnimation()
   const [contactRefAnim, isContactVisible] = useScrollAnimation()
 
   useEffect(() => {
@@ -92,6 +96,14 @@ function App() {
         }}
       >
         <Projects className={isProjectsVisible ? 'visible' : ''} />
+      </div>
+      <div
+        ref={(node) => {
+          sections.certifications.current = node
+          certificationsRefAnim.current = node
+        }}
+      >
+        <Certifications className={isCertificationsVisible ? 'visible' : ''} />
       </div>
       <div
         ref={(node) => {

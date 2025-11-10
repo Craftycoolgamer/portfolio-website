@@ -3,6 +3,14 @@ import './Projects.css'
 const Projects = ({ className = '' }) => {
   const projects = [
     {
+      title: 'This Website',
+      description:
+        'A modern, responsive single-page website built with React and Vite. Features include dark/light mode toggle, smooth scroll animations, interactive navigation, and sections for about, experience, projects, certifications, and contact.',
+      technologies: ['React', 'Vite', 'CSS3', 'JavaScript'],
+      github: 'https://github.com/Craftycoolgamer/portfolio-website',
+      demo: '#',
+    },
+    {
       title: 'Project One',
       description:
         'A modern web application built with React and Node.js. Features include user authentication, real-time updates, and responsive design.',

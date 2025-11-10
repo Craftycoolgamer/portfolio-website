@@ -1,0 +1,287 @@
+.certifications {
+  background-color: var(--bg-secondary);
+}
+
+.certificationsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certificationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.certificationBadge {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.dark .certificationBadge {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.certificationBadge:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+  border-color: var(--accent);
+}
+
+.dark .certificationBadge:hover {
+  box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+}
+
+.badgeImage {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.badgeInfo {
+  width: 100%;
+}
+
+.badgeName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.badgeIssuer {
+  font-size: 1rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.badgeDate {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  background: var(--card-bg);
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modalClose:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: rotate(90deg);
+}
+
+.modalHeader {
+  padding: 2rem 2rem 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.modalBadgeImage {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.modalBadgeImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modalTitle h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.modalIssuer {
+  font-size: 1.1rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.modalBody {
+  padding: 2rem;
+}
+
+.modalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.infoItem {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.infoItem strong {
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+}
+
+.modalDescription {
+  margin-bottom: 2rem;
+}
+
+.modalDescription h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.modalDescription p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.modalSkills h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skillTag {
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .certificationsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .certificationBadge {
+    padding: 1.5rem;
+  }
+
+  .badgeImage {
+    width: 120px;
+    height: 120px;
+  }
+
+  .modalContent {
+    margin: 1rem;
+    max-height: 95vh;
+  }
+
+  .modalHeader {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .modalBody {
+    padding: 1.5rem;
+  }
+
+  .modalBadgeImage {
+    width: 80px;
+    height: 80px;
+  }
+}
+

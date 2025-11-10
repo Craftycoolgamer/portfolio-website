@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--grey-medium) 100%);
   position: relative;
   overflow: hidden;
@@ -36,15 +36,22 @@
 .heroContainer {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 20px;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .heroContent {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+.heroText {
+  text-align: left;
 }
 
 .heroTitle {
@@ -57,7 +64,7 @@
 
 .heroName {
   color: var(--accent);
-  display: block;
+  /* display: block; */
 }
 
 .heroSubtitle {
@@ -77,7 +84,7 @@
 .heroButtons {
   display: flex;
   gap: 1.5rem;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -115,7 +122,62 @@
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
 }
 
+.heroImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.heroImageWrapper {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  position: relative;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+}
+
+.dark .heroImageWrapper {
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+.heroImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+  background: var(--accent);
+  border-radius: 20px;
+}
+
 @media (max-width: 768px) {
+  .heroContainer {
+    padding: 0 15px;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .heroImage {
+    order: -1;
+  }
+
+  .heroImageWrapper {
+    max-width: 300px;
+  }
+
   .heroTitle {
     font-size: 2.5rem;
   }
@@ -130,7 +192,7 @@
 
   .heroButtons {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .btn {
