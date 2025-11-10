@@ -49,7 +49,7 @@
 }
 
 .experienceCard {
-  background: var(--bg-primary);
+  background: var(--card-bg);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -57,9 +57,17 @@
   border-left: 4px solid var(--accent);
 }
 
+.dark .experienceCard {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
 .experienceCard:hover {
   transform: translateX(10px);
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+}
+
+.dark .experienceCard:hover {
+  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.3);
 }
 
 .experienceHeader {

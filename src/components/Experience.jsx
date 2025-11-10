@@ -1,6 +1,6 @@
 import './Experience.css'
 
-const Experience = () => {
+const Experience = ({ className = '' }) => {
   const experiences = [
     {
       company: 'Company Name',
@@ -26,7 +26,7 @@ const Experience = () => {
   ]
 
   return (
-    <section className="section experience">
+    <section className={`section experience ${className}`.trim()}>
       <h2 className="sectionTitle">Experience</h2>
       <div className="experienceContainer">
         <div className="timeline">

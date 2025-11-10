@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState, useMemo } from 'react'
+import { useScrollAnimation } from './hooks/useScrollAnimation'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -25,6 +26,12 @@ function App() {
     }),
     []
   )
+
+  // Scroll animations for sections
+  const [aboutRefAnim, isAboutVisible] = useScrollAnimation()
+  const [experienceRefAnim, isExperienceVisible] = useScrollAnimation()
+  const [projectsRefAnim, isProjectsVisible] = useScrollAnimation()
+  const [contactRefAnim, isContactVisible] = useScrollAnimation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,17 +67,37 @@ function App() {
       <div ref={sections.home}>
         <Hero scrollToSection={scrollToSection} />
       </div>
-      <div ref={sections.about}>
-        <About />
+      <div
+        ref={(node) => {
+          sections.about.current = node
+          aboutRefAnim.current = node
+        }}
+      >
+        <About className={isAboutVisible ? 'visible' : ''} />
       </div>
-      <div ref={sections.experience}>
-        <Experience />
+      <div
+        ref={(node) => {
+          sections.experience.current = node
+          experienceRefAnim.current = node
+        }}
+      >
+        <Experience className={isExperienceVisible ? 'visible' : ''} />
       </div>
-      <div ref={sections.projects}>
-        <Projects />
+      <div
+        ref={(node) => {
+          sections.projects.current = node
+          projectsRefAnim.current = node
+        }}
+      >
+        <Projects className={isProjectsVisible ? 'visible' : ''} />
       </div>
-      <div ref={sections.contact}>
-        <Contact />
+      <div
+        ref={(node) => {
+          sections.contact.current = node
+          contactRefAnim.current = node
+        }}
+      >
+        <Contact className={isContactVisible ? 'visible' : ''} />
       </div>
     </div>
   )

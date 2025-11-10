@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Contact.css'
 
-const Contact = () => {
+const Contact = ({ className = '' }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -65,7 +65,7 @@ const Contact = () => {
   }
 
   return (
-    <section className="section contact">
+    <section className={`section contact ${className}`.trim()}>
       <h2 className="sectionTitle">Get In Touch</h2>
       <div className="contactContainer">
         <div className="contactContent">

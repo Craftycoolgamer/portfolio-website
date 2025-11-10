@@ -1,6 +1,6 @@
 import './About.css'
 
-const About = () => {
+const About = ({ className = '' }) => {
   const skills = [
     'JavaScript',
     'React',
@@ -13,7 +13,7 @@ const About = () => {
   ]
 
   return (
-    <section className="section about">
+    <section className={`section about ${className}`.trim()}>
       <h2 className="sectionTitle">About Me</h2>
       <div className="aboutContainer">
         <div className="aboutContent">

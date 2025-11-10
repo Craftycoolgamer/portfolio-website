@@ -3,9 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--grey-light) 0%, var(--grey-medium) 100%);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--grey-medium) 100%);
   position: relative;
   overflow: hidden;
+}
+
+.dark .hero {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-dark) 100%);
 }
 
 .hero::before {

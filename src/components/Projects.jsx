@@ -1,6 +1,6 @@
 import './Projects.css'
 
-const Projects = () => {
+const Projects = ({ className = '' }) => {
   const projects = [
     {
       title: 'Project One',
@@ -37,7 +37,7 @@ const Projects = () => {
   ]
 
   return (
-    <section className="section projects">
+    <section className={`section projects ${className}`.trim()}>
       <h2 className="sectionTitle">Projects</h2>
       <div className="projectsContainer">
         <div className="projectsGrid">
