@@ -61,12 +61,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1.5rem;
-  /* overflow: hidden; */
   transition: max-height 0.3s ease;
+  overflow: hidden;
+  padding-top: 5px;
+  margin-top: -5px;
 }
 
 .skillsGrid:not(.expanded) {
-  max-height: 220px;
+  overflow: hidden;
 }
 
 .skillCard {
@@ -92,7 +94,7 @@
 
 .expandButton {
   display: block;
-  margin: 2rem auto 0;
+  margin: 0.5rem auto 0 auto;
   padding: 0.875rem 2rem;
   font-size: 1rem;
   font-weight: 600;

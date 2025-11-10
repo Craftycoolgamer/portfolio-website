@@ -74,7 +74,7 @@
   background: transparent;
   padding: 0.5rem;
   position: absolute;
-  left: 2rem;
+  right: 2rem;
 }
 
 .menuToggle span {
@@ -100,7 +100,7 @@
 @media (max-width: 768px) {
   .menuToggle {
     display: flex;
-    left: 1.5rem;
+    right: 1.5rem;
   }
 
   .navbarMenu {
@@ -140,7 +140,7 @@
   }
 
   .navbarContainer {
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 1.5rem;
   }
 }
 
