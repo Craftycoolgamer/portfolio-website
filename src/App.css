@@ -1,0 +1,74 @@
+:root {
+  /* Blue Colors */
+  --blue-primary: #2563EB;
+  --blue-secondary: #3B82F6;
+  --blue-light: #60A5FA;
+  --blue-dark: #1E40AF;
+
+  /* Grey Colors */
+  --grey-light: #F3F4F6;
+  --grey-medium: #E5E7EB;
+  --grey-text: #6B7280;
+  --grey-dark: #9CA3AF;
+  --grey-darker: #4B5563;
+  --grey-darkest: #1F2937;
+  --grey-bg: #111827;
+
+  /* Theme Colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: var(--grey-light);
+  --bg-dark: var(--grey-bg);
+  --text-primary: var(--grey-darkest);
+  --text-secondary: var(--grey-text);
+  --accent: var(--blue-primary);
+  --accent-hover: var(--blue-secondary);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 15px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
