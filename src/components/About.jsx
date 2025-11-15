@@ -106,7 +106,6 @@ const About = ({ className = '' }) => {
     <section className={`section about ${className}`.trim()}>
       <h2 className="sectionTitle">About Me</h2>
       <div className="aboutContainer">
-        <div className="aboutContent">
           <div className="aboutText">
             <p>
               I'm a passionate full stack developer with a focus on
@@ -127,13 +126,7 @@ const About = ({ className = '' }) => {
               rock climbing, or riding motorcycles. I enjoy building personal
               projects that challenge me to grow in both software and hardware
               domains.
-            </p>
-          </div>
-          <div className="aboutImage">
-            <div className="imagePlaceholder">
-              <span>Profile Image</span>
-            </div>
-          </div>
+          </p>
         </div>
         <div className="skillsSection">
           <h3 className="skillsTitle">Skills & Technologies</h3>
