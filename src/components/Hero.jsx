@@ -9,18 +9,7 @@ const Hero = ({ scrollToSection }) => {
             <h1 className="heroTitle">
               I'm <span className="heroName">Quinn Prisbrey</span>
             </h1>
-            <h2 className="heroSubtitle">Full Stack Software Developer</h2>
-            {/* <p className="heroDescription">
-              I build modern software with a focus on user experience and
-              clean code. Welcome to my portfolio.
-            </p> */}
             <div className="heroButtons">
-              {/* <button
-                className="btn btnPrimary"
-                onClick={() => scrollToSection('about')}
-              >
-                Learn More
-              </button> */}
               <button
                 className="btn btnSecondary"
                 onClick={() => scrollToSection('contact')}
@@ -30,9 +19,7 @@ const Hero = ({ scrollToSection }) => {
             </div>
           </div>
           <div className="heroImage">
-            <div className="heroImageWrapper">
-              <img src="/profile-image.jpg" alt="Quinn Prisbrey" />
-            </div>
+            <img src="./images/pfp.png" alt="Quinn Prisbrey" />
           </div>
         </div>
       </div>

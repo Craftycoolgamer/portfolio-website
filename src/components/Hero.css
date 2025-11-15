@@ -1,11 +1,12 @@
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: flex-start;
   background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--grey-medium) 100%);
   position: relative;
   overflow: hidden;
+  /* padding-top: 120px; */
 }
 
 .dark .hero {
@@ -129,35 +130,33 @@
   position: relative;
 }
 
-.heroImageWrapper {
+/* .heroImageWrapper {
   width: 100%;
-  max-width: 500px;
-  aspect-ratio: 1;
   position: relative;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
-}
+} */
 
-.dark .heroImageWrapper {
+.dark .heroImage {
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
 }
 
-.heroImageWrapper img {
+.heroImage img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: center;
-  clip-path: polygon(
-    30% 0%,
-    70% 0%,
-    100% 30%,
-    100% 70%,
-    70% 100%,
-    30% 100%,
-    0% 70%,
-    0% 30%
-  );
-  background: var(--accent);
-  border-radius: 20px;
+  margin-bottom: -15px;
+  /* background: var(--accent); */
+}
+
+/* Desktop: Ensure text on left, image on right */
+@media (min-width: 769px) {
+  .heroText {
+    order: 1;
+  }
+
+  .heroImage {
+    order: 2;
+  }
 }
 
 @media (max-width: 768px) {
@@ -171,7 +170,11 @@
   }
 
   .heroImage {
-    order: -1;
+    order: 2;
+  }
+
+  .heroText {
+    order: 1;
   }
 
   .heroImageWrapper {
