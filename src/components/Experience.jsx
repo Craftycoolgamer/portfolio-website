@@ -77,7 +77,7 @@ const Experience = ({ className = '' }) => {
     {
       company: 'Buzz Financial (Expitrans)',
       role: 'Full Stack Developer',
-      period: '2022 - Present',
+      period: 'Jun 2025 - Present',
       description:
         'Led development of multiple projects using a variety of technologies including AWS, React, Node.js, PHP, Python, and more. Collaborated with cross-functional teams to deliver high-quality software solutions. Integrated with various APIs and databases to deliver seamless user experiences.',
     },
