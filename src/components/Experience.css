@@ -12,16 +12,7 @@
   padding-left: 2rem;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--accent);
-  border-radius: 2px;
-}
+
 
 .timelineItem {
   position: relative;
@@ -35,13 +26,27 @@
 .timelineMarker {
   position: absolute;
   left: -2.5rem;
-  top: 0.5rem;
+  top: 6.5rem;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background: var(--accent);
   border: 3px solid var(--bg-secondary);
   box-shadow: 0 0 0 3px var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 3px var(--accent);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.3);
+    opacity: 0.9;
+  }
 }
 
 .timelineContent {
@@ -54,7 +59,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border-left: 4px solid var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
 .dark .experienceCard {
@@ -62,7 +67,7 @@
 }
 
 .experienceCard:hover {
-  transform: translateX(10px);
+  transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
 }
 
@@ -107,7 +112,10 @@
 
 @media (max-width: 768px) {
   .timeline {
-    padding-left: 1.5rem;
+    padding-left: 0px;
+  }
+  .timelineContent {
+    margin-left: 0px;
   }
 
   .timelineMarker {
@@ -127,6 +135,95 @@
   .experienceHeader {
     flex-direction: column;
     align-items: flex-start;
+  }
+  
+  .timelineMarker {
+    display: none;
+  }
+  
+}
+
+.skillsSection {
+  margin-top: 3rem;
+}
+
+.skillsTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  padding: 5px 0px;
+  margin-top: -5px;
+}
+
+.skillsGrid:not(.expanded) {
+  overflow: hidden;
+}
+
+.skillsGrid.expanded {
+  overflow: visible;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+.skillCard {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-primary);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skillCard:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+  color: var(--accent);
+}
+
+.expandButton {
+  display: block;
+  margin: 0 auto;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: transparent;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 180px;
+}
+
+.expandButton:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
   }
 }
 
