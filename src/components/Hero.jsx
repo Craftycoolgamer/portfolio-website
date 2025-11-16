@@ -9,6 +9,9 @@ const Hero = ({ scrollToSection }) => {
             <h1 className="heroTitle">
               I'm <span className="heroName">Quinn Prisbrey</span>
             </h1>
+            <p className="heroDescription">
+              Full stack developer and open source enthusiast
+            </p>
             <div className="heroButtons">
               <button
                 className="btn btnSecondary"

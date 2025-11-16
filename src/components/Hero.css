@@ -59,7 +59,7 @@
   font-size: 3.5rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   line-height: 1.2;
 }
 
@@ -78,7 +78,7 @@
 .heroDescription {
   font-size: 1.2rem;
   color: var(--text-secondary);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   line-height: 1.8;
 }
 
