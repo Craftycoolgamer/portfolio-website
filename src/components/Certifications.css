@@ -1,10 +1,10 @@
 .certifications {
-  background-color: var(--bg-secondary);
+  /* background-color: var(--bg-secondary); */
 }
 
 .certificationsContainer {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
 }
 
 .certificationsGrid {

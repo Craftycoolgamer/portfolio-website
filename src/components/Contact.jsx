@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import './Contact.css'
 
 const Contact = ({ className = '' }) => {
@@ -10,6 +11,7 @@ const Contact = ({ className = '' }) => {
 
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // 'success' or 'error'
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -55,13 +57,61 @@ const Contact = ({ className = '' }) => {
     }
 
     setIsSubmitting(true)
+    setSubmitStatus(null)
 
-    // Simulate form submission
-    setTimeout(() => {
-      alert('Thank you for your message! I will get back to you soon.')
-      setFormData({ name: '', email: '', message: '' })
+    // Get EmailJS configuration from environment variables
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+
+    // Check if EmailJS is configured
+    if (!publicKey || !serviceId || !templateId) {
+      console.error('EmailJS is not configured. Please set up your .env file.')
+      console.error('Missing values:', {
+        publicKey: !publicKey,
+        serviceId: !serviceId,
+        templateId: !templateId,
+      })
+      setSubmitStatus('error')
       setIsSubmitting(false)
-    }, 1000)
+      alert('Form submission is not configured. Please check your .env file and restart the dev server.')
+      return
+    }
+
+    try {
+      // Send email using EmailJS (newer API - public key passed directly)
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'quinn@prisbrey.us', // Your email address
+        },
+        publicKey // Pass public key as 4th parameter
+      )
+
+      if (result.text === 'OK') {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', message: '' })
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null)
+        }, 5000)
+      } else {
+        throw new Error('Email sending failed')
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+      setSubmitStatus('error')
+      // Clear error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null)
+      }, 5000)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -221,6 +271,16 @@ const Contact = ({ className = '' }) => {
                 <span className="errorMessage">{errors.message}</span>
               )}
             </div>
+            {submitStatus === 'success' && (
+              <div className="submitStatus successMessage">
+                Thank you for your message! I will get back to you soon.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="submitStatus errorMessage">
+                Sorry, there was an error sending your message. Please try again or contact me directly at quinn@prisbrey.us
+              </div>
+            )}
             <button
               type="submit"
               className="btn btnPrimary submitButton"
