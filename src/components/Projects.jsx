@@ -3,14 +3,6 @@ import './Projects.css'
 const Projects = ({ className = '' }) => {
   const projects = [
     {
-      title: 'Portfolio Website',
-      description:
-        'A modern, responsive single-page website built with React and Vite. Features include dark/light mode toggle, smooth scroll animations, interactive navigation, and sections for about, experience, projects, certifications, and contact.',
-      technologies: ['React', 'Vite', 'CSS', 'JavaScript'],
-      github: 'https://github.com/Craftycoolgamer/portfolio-website',
-      demo: '#',
-    },
-    {
       title: 'Discount Program Enrollment Portal',
       description:
         'Created a responsive React HIPAA compliant interface for digital discount card enrollment and download. Integrated AdvancedMD APIs for automatic user profile updates',
@@ -40,6 +32,14 @@ const Projects = ({ className = '' }) => {
         'Developed real-time 1080p, 60 fps hand-tracking for gesture-based controls. Achieved accurate detection up to 5 ft using consumer-grade cameras.',
       technologies: ['Python', 'OpenCV', 'MediaPipe', 'Computer Vision'],
       github: '#',
+      demo: '#',
+    },
+    {
+      title: 'Portfolio Website',
+      description:
+        'A modern, responsive single-page website built with React and Vite. Features include dark/light mode toggle, smooth scroll animations, interactive navigation, and sections for about, experience, projects, certifications, and contact.',
+      technologies: ['React', 'Vite', 'CSS', 'JavaScript'],
+      github: 'https://github.com/Craftycoolgamer/portfolio-website',
       demo: '#',
     },
   ]
