@@ -141,7 +141,7 @@
 }
 
 .heroImage img {
-  width: 100%;
+  width: 600px;
   object-fit: cover;
   object-position: center;
   margin-bottom: -15px;
@@ -201,6 +201,10 @@
   .btn {
     width: 100%;
     max-width: 300px;
+  }
+
+  .heroImage img {
+    width: 100%;
   }
 }
 

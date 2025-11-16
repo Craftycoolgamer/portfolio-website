@@ -19,7 +19,7 @@ const Hero = ({ scrollToSection }) => {
             </div>
           </div>
           <div className="heroImage">
-            <img src="./images/pfp greyscale.png" alt="Quinn Prisbrey" />
+            <img src={`${import.meta.env.BASE_URL}images/pfp greyscale.png`} alt="Quinn Prisbrey" />
           </div>
         </div>
       </div>
