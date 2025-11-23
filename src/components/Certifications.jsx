@@ -98,8 +98,8 @@ const Certifications = ({ className = '' }) => {
       {selectedCert && (
         <div className="modalOverlay" onClick={closeModal}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-            <button className="modalClose" onClick={closeModal}>
-              ×
+            <button className="modalClose" onClick={closeModal} aria-label="Close">
+              <span>×</span>
             </button>
             <div className="modalHeader">
               <div className="modalBadgeImage">
