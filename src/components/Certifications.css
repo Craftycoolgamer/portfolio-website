@@ -211,6 +211,20 @@
   margin-right: 0.5rem;
 }
 
+.credentialLink {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.credentialLink:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
+}
+
 .modalDescription {
   margin-bottom: 2rem;
 }

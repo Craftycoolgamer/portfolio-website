@@ -128,7 +128,7 @@ const Contact = ({ className = '' }) => {
             <div className="contactDetails">
               <div className="externalLinks">
                 <a
-                  href="mailto:quinn@prisbrey.com"
+                  href="mailto:quinn@prisbrey.us"
                   className="externalLink"
                 >
                   <svg
@@ -147,7 +147,7 @@ const Contact = ({ className = '' }) => {
                   </svg>
                   <div className="externalLinkContent">
                     <span className="externalLinkTitle">Email</span>
-                    <span className="externalLinkSubtitle">quinn@prisbrey.com</span>
+                    <span className="externalLinkSubtitle">quinn@prisbrey.us</span>
                   </div>
                 </a>
                 <a

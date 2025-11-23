@@ -25,36 +25,39 @@ const Certifications = ({ className = '' }) => {
   const certifications = [
     {
       id: 1,
-      name: 'AWS Certified Solutions Architect',
+      name: 'AWS Certified Cloud Practitioner',
       issuer: 'Amazon Web Services',
       date: '2024',
       description:
-        'Demonstrates expertise in designing distributed systems on AWS. Covers architectural best practices, cost optimization, security, and reliability.',
-      badgeUrl: 'https://via.placeholder.com/150/2563EB/FFFFFF?text=AWS',
-      credentialId: 'ABC-123-XYZ',
-      skills: ['Cloud Architecture', 'AWS Services', 'System Design'],
+        'AWS Certified Cloud Practitioner certifies fundamental understanding of IT services and their uses in the AWS Cloud. Demonstrated cloud fluency and foundational AWS knowledge. Able to identify essential AWS services necessary to set up AWS-focused projects',
+      badgeUrl: 'https://www.credly.com/badges/a44e950d-7070-4c4e-a609-63da18d66879/linked_in_profile',
+      credentialId: '2f7dff55b91843f5bd41acc3d948bcd3',
+      image: 'AWS Cloud Practitioner.png',
+      skills: ['Cloud Computing', 'DevOps', 'Infrastructure as Code', 'Computer Science', 'Amazon Web Services', 'AWS Services', 'Cloud Platform'],
     },
     {
       id: 2,
-      name: 'Google Cloud Professional Developer',
-      issuer: 'Google Cloud',
-      date: '2023',
+      name: 'CompTIA Project+',
+      issuer: 'CompTIA',
+      date: '2024',
       description:
-        'Validates ability to build scalable and highly available applications using Google Cloud Platform technologies.',
-      badgeUrl: 'https://via.placeholder.com/150/4285F4/FFFFFF?text=GCP',
-      credentialId: 'GCP-456-DEF',
-      skills: ['GCP', 'Cloud Development', 'DevOps'],
+        'CompTIA Project+ certifies entry-level hands-on IT project management skills to coordinate small- to medium-sized projects using waterfall and agile methodologies. Demonstrates the knowledge and skills required to manage a project lifecycle by identifying and managing risk, establishing a communication plan, managing resources, and stakeholders, and maintaining project documentation',
+      badgeUrl: 'https://www.credly.com/badges/427f5926-6c92-423f-8e4e-48a450d0a1c8/linked_in_profile',
+      credentialId: 'DC6Q2JK631Q1QKCL',
+      image: 'CompTIA Project+.png',
+      skills: ['Project Management', 'Project+', 'Budgeting', 'Scheduling', 'Resource Management', 'Risk Management', 'Communication', 'Stakeholder Management', 'Project Planning']
     },
     {
       id: 3,
-      name: 'Microsoft Azure Fundamentals',
-      issuer: 'Microsoft',
-      date: '2023',
+      name: 'ITIL® Foundation',
+      issuer: 'AXELOS Global Best Practice',
+      date: '2024',
       description:
-        'Foundational knowledge of cloud services and how those services are provided with Microsoft Azure.',
-      badgeUrl: 'https://via.placeholder.com/150/0078D4/FFFFFF?text=Azure',
-      credentialId: 'AZ-789-GHI',
-      skills: ['Azure', 'Cloud Computing', 'Fundamentals'],
+        'ITIL® Foundation certification validates the ability to understand and apply the ITIL® framework, which is a best practice for IT service management.',
+      badgeUrl: 'https://www.peoplecert.org/for-corporations/certificate-verification-service',
+      credentialId: 'GR671687348QP',
+      image: 'ITIL Foundation.png',
+      skills: ['ITIL®', 'IT Service Management', 'ITIL® Foundation', 'ITIL® Best Practices', 'ITIL® Framework', 'ITIL® Practices', 'ITIL® Processes']
     },
   ]
 
@@ -79,7 +82,7 @@ const Certifications = ({ className = '' }) => {
                 onClick={() => openModal(cert)}
               >
                 <div className="badgeImage">
-                  <img src={cert.badgeUrl} alt={cert.name} />
+                  <img src={`${import.meta.env.BASE_URL}images/${cert.image}`} alt={cert.name} />
                 </div>
                 <div className="badgeInfo">
                   <h3 className="badgeName">{cert.name}</h3>
@@ -100,7 +103,7 @@ const Certifications = ({ className = '' }) => {
             </button>
             <div className="modalHeader">
               <div className="modalBadgeImage">
-                <img src={selectedCert.badgeUrl} alt={selectedCert.name} />
+                <img src={`${import.meta.env.BASE_URL}images/${selectedCert.image}`} alt={selectedCert.name} />
               </div>
               <div className="modalTitle">
                 <h2>{selectedCert.name}</h2>
@@ -114,7 +117,16 @@ const Certifications = ({ className = '' }) => {
                 </div>
                 {selectedCert.credentialId && (
                   <div className="infoItem">
-                    <strong>Credential ID:</strong> {selectedCert.credentialId}
+                    <strong>Credential ID:</strong>{' '}
+                    <a
+                      href={selectedCert.badgeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="credentialLink"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {selectedCert.credentialId}
+                    </a>
                   </div>
                 )}
               </div>
