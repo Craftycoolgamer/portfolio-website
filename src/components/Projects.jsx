@@ -7,6 +7,7 @@ const Projects = ({ className = '' }) => {
       description:
         'Created a responsive React HIPAA compliant interface for digital discount card enrollment and download. Integrated AdvancedMD APIs for automatic user profile updates',
       technologies: ['React', 'CSS', 'Node.js', 'Python', 'MySQL', 'AWS', 'REST APIs'],
+      image: 'Discount Program Enrollment Portal.png',
       github: '',
       demo: 'https://portal.mysimplerx.com',
     },
@@ -15,6 +16,7 @@ const Projects = ({ className = '' }) => {
       description:
         'Designed and developed a web application that verifies resumes via USPS and QR codes. Built secure RESTful APIs and file upload pipelines handling 50 MB+ documents with validation. Implemented persistent backend storage using SQLite and C#.',
       technologies: ['React', 'Express', 'PostgreSQL', 'Node.js', 'C#', 'SQLite', 'REST APIs'],
+      // image: 'Full-Stack Identity Verification System.png',
       github: 'https://github.com/Craftycoolgamer/IdentityQRVerificationV2',
       demo: '#',
     },
@@ -23,6 +25,7 @@ const Projects = ({ className = '' }) => {
       description:
         'Engineered a containerized media server automating video storage and playback across 4+ sites. Leveraged Docker for scalable deployment and simplified maintenance.',
       technologies: ['Docker', 'Linux', 'Nginx'],
+      image: 'Media Server Platform.png',
       github: '',
       demo: '',
     },
@@ -31,6 +34,7 @@ const Projects = ({ className = '' }) => {
       description:
         'Developed real-time 1080p, 60 fps hand-tracking for gesture-based controls. Achieved accurate detection up to 5 ft using consumer-grade cameras.',
       technologies: ['Python', 'OpenCV', 'MediaPipe', 'Computer Vision'],
+      // image: 'Hand Tracking Input System.png',
       github: '#',
       demo: '#',
     },
@@ -39,6 +43,7 @@ const Projects = ({ className = '' }) => {
       description:
         'A modern, responsive single-page website built with React and Vite. Features include dark/light mode toggle, smooth scroll animations, interactive navigation, and sections for about, experience, projects, certifications, and contact.',
       technologies: ['React', 'Vite', 'CSS', 'JavaScript'],
+      image: 'Portfolio Website.png',
       github: 'https://github.com/Craftycoolgamer/portfolio-website',
       demo: '#',
     },
@@ -58,9 +63,10 @@ const Projects = ({ className = '' }) => {
               }}
             >
               <div className="projectVisual">
-                <div className="projectImage">
-                  <div className="imagePattern"></div>
-                  <div className="imageOverlay"></div>
+                <div className="projectImageBox">
+                  {project.image && <img src={`${import.meta.env.BASE_URL}images/projects/${project.image}`} alt={project.title} className="projectImage" />}
+                  {!project.image && <div className="imagePattern" />}
+                  <div className="imageOverlay" />
                   {project.demo && (
                     <a
                       href={project.demo}
