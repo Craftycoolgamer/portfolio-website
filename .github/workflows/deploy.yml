@@ -30,6 +30,12 @@ jobs:
       
       - name: Install dependencies
         run: npm ci
+
+      - name: Debug - Check secrets (remove after testing)
+        run: |
+          echo "Public Key exists: $([ -n "${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}" ] && echo 'YES' || echo 'NO')"
+          echo "Service ID exists: $([ -n "${{ secrets.VITE_EMAILJS_SERVICE_ID }}" ] && echo 'YES' || echo 'NO')"
+          echo "Template ID exists: $([ -n "${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}" ] && echo 'YES' || echo 'NO')"
       
       - name: Build with environment variables
         env:
